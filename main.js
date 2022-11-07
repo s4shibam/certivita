@@ -20,25 +20,26 @@ let genre = null,
   sign = null,
   logoButton = null,
   generateButton = null,
+  loadingAnimation = null,
   downloadButton = null,
-  certificatePreview = null,
   existingPdfBytes = null,
   pdfDoc = null,
   pdfPage = null,
   pdfBytes = null,
   pdfFile = null,
+  certificatePreview = null,
   certificateName = null;
 
-let ABRFont = null,
-  PLFont = null,
+let PFDFont = null,
   PSBFont = null,
-  PFDFont = null;
+  PLFont = null,
+  ABRFont = null;
 
 let modifiedPdfDoc = null,
-  viewport = null,
   firstPage = null,
-  renderContext = null,
-  hiddenCanvas = null;
+  viewport = null,
+  hiddenCanvas = null,
+  renderContext = null;
 
 // Form validation using Sweet Alert
 function formValidation() {
@@ -142,6 +143,10 @@ async function getPreview(pdf_url) {
     alert(error.message);
   }
 
+  // Remove loading animation
+  loadingAnimation.classList.add("hidden");
+  loadingAnimation.classList.remove("flex");
+
   // Generate an url from canvas and assign that to the certificatePreview (img tag)
   certificatePreview.src = await hiddenCanvas.toDataURL();
 }
@@ -163,6 +168,10 @@ async function generateCertificate() {
   }
 
   // On success ...
+  // Show loading animation
+  loadingAnimation.classList.remove("hidden");
+  loadingAnimation.classList.add("flex");
+
   // Get the available PDFDocument and convert it into arrayBuffer
   existingPdfBytes = await fetch(certificateTemplate).then((res) =>
     res.arrayBuffer()
@@ -243,14 +252,15 @@ function backToHome() {
 window.addEventListener("load", () => {
   logoButton = document.getElementById("logo");
   generateButton = document.getElementById("generate");
-  downloadButton = document.getElementById("download");
   genre = document.getElementById("genre");
   recipient = document.getElementById("recipient");
   reason = document.getElementById("reason");
   date = document.getElementById("date");
   sign = document.getElementById("sign");
+  loadingAnimation = document.getElementById("loading-animation");
   hiddenCanvas = document.getElementById("hiddenCanvas");
   certificatePreview = document.getElementById("preview");
+  downloadButton = document.getElementById("download");
 
   if (generateButton) {
     generateButton.addEventListener("click", generateCertificate);
