@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="description"
+      content="Certivita, Generates personalized certificate for any event, which is fully customizable."
+    />
+    <meta
+      name="keywords"
+      content="certificate, certificate generator, free, certificate maker, free certificates, personalized certificates, free certificate generator, free certificate maker, printable certificates, free printable certificates, certificate generator pdf format"
+    />
+    <meta
+      property="og:description"
+      content="Generate personalized downloadable Certificates for free!"
+    />
+    <meta
+      property="og:image"
+      content="https://s4shibam-certivita.netlify.app/images/logo.png"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Certivita - Certificate Generator</title>
+    <link rel="icon" type="image/x-icon" href="./logo.png" />
+    <!-- <link rel="stylesheet" href="./style.css" /> -->
+  </head>
+
+  <!-- Body Starts -->
+  <body class="m-0 p-0 bg-gray-100 text-black font-poppins">
+    <!-- Navigation Bar Starts -->
+    <nav class="px-10 py-3 flex items-center justify-between absolute w-full">
+      <!-- Logo Starts -->
+      <img
+        src="./logo.png"
+        alt="Logo Image"
+        class="w-14 cursor-pointer hover:animate-spin-slow"
+        id="logo"
+      />
+      <!-- Logo Ends -->
+
+      <!-- Site Name Starts -->
+      <p class="text-4xl lg:text-6xl font-extrabold tracking-wider">
+        CERTIVITA
+      </p>
+      <!-- Site Name Ends -->
+
+      <!-- Developer's Social Site Link Starts -->
+      <a href="https://www.linkedin.com/in/s4shibam/" target="_blank">
+        <img
+          src="./linkedin.png"
+          class="w-16 cursor-pointer hover:animate-spin-slow"
+        />
+      </a>
+      <!-- Developer's Social Site Link Ends -->
+    </nav>
+    <!-- Navigation Bar Ends -->
+
+    <!-- Main Starts -->
+    <main
+      class="pt-20 xl:pt-16 pb-16 xl:pb-0 min-h-screen w-full flex justify-center items-center flex-col xl:flex-row"
+    >
+      <!-- Background Animation Starts -->
+      <div class="bg"></div>
+      <div class="bg bg2"></div>
+      <div class="bg bg3"></div>
+      <!-- Background Animation Ends -->
+
+      <!-- Form Container Starts -->
+
+      <div
+        class="form-container m-4 w-8/12 xl:w-4/12 max-w-4xl flex justify-center items-center"
+      >
+        <!-- Certificate Form Starts -->
+        <div
+          class="form mt-10 xl:m-4 px-6 py-5 w-full xl:w-auto flex flex-col justify-center bg-white opacity-90 backdrop-blur-xl shadow-xl rounded-xl"
+          id="form"
+        >
+          <!-- Heading Starts -->
+          <div
+            class="heading block text-center text-4xl font-extrabold text-blue-900"
+          >
+            Personalize Your
+            <span class="text-amber-600"> Certificate! </span>
+          </div>
+          <!-- Heading Ends -->
+
+          <!-- Certificate Genre Starts -->
+          <div class="form-control">
+            <label for="genre" class="form-labels"> Certificate Genre</label>
+            <input
+              class="form-inputs"
+              type="text"
+              id="genre"
+              placeholder="Certificate of Achievement"
+              autocomplete="off"
+              required
+            />
+          </div>
+          <!-- Certificate Genre Ends -->
+
+          <!-- Recipient Name Starts -->
+          <div class="form-control">
+            <label for="recipient" class="form-labels"> Recipient Name</label>
+            <input
+              class="form-inputs"
+              type="text"
+              id="recipient"
+              placeholder="Shibam Saha"
+              autocomplete="off"
+              required
+            />
+          </div>
+          <!-- Recipient Name Ends -->
+
+          <!-- Certificate Reason Starts -->
+          <div class="form-control">
+            <label for="reason" class="form-labels"> Certificate Reason </label>
+
+            <textarea
+              class="form-inputs resize-none"
+              type="text"
+              id="reason"
+              placeholder="For completing XYZ Course under ABC College..."
+              autocomplete="off"
+              required
+            ></textarea>
+          </div>
+          <!-- Certificate Reason Ends -->
+
+          <!-- Date of Issue Starts -->
+          <div class="form-control">
+            <label for="date" class="form-labels"> Date of Issue </label>
+            <input
+              class="form-inputs"
+              type="number"
+              id="date"
+              placeholder="DDMMYYYY"
+              autocomplete="off"
+              required
+            />
+          </div>
+          <!-- Date of Issue Ends -->
+
+          <!-- Signature Starts -->
+          <div class="form-control">
+            <label for="sign" class="form-labels"> Signature </label>
+            <input
+              class="form-inputs"
+              type="text"
+              id="sign"
+              placeholder="Team Certivita"
+              autocomplete="off"
+              required
+            />
+          </div>
+          <!-- Signature Ends -->
+
+          <!-- Generate Certificate Button Starts -->
+          <button
+            data-tooltip-target="tooltip-animation-generate"
+            type="button"
+            class="action-btn"
+            id="generate"
+          >
+            Generate Certificate
+          </button>
+          <div
+            id="tooltip-animation-generate"
+            role="tooltip"
+            class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 transition-opacity delay-300 tooltip dark:bg-gray-700"
+          >
+            Get preview of the Certificate!
+            <div class="tooltip-arrow" data-popper-arrow></div>
+          </div>
+          <!-- Generate Certificate Button Ends -->
+        </div>
+        <!-- Certificate Form Ends -->
+      </div>
+      <!-- Form Container Ends -->
+
+      <!-- Preview Image Container Starts -->
+      <div
+        class="image-container m-4 w-8/12 xl:w-8/12 max-w-[54rem] flex justify-center items-center"
+      >
+        <!-- Specimen/Preview Certificate Display Starts  -->
+        <div
+          class="image mt-10 xl:m-4 px-6 py-5 w-full xl:w-auto flex flex-col justify-center items-center bg-white opacity-90 backdrop-blur-xl shadow-xl rounded-xl"
+        >
+          <!-- Heading Starts -->
+          <div
+            class="heading block text-center text-4xl font-extrabold text-blue-900"
+          >
+            Certificate
+            <span class="text-amber-600"> Preview! </span>
+          </div>
+          <!-- Heading Ends -->
+
+          <!-- Image Preview Starts -->
+          <img
+            src="./Specimen_Certificate.png"
+            class="mt-5 w-[90%] border-2 rounded-lg border-black opacity-100"
+            id="preview"
+          />
+          <!-- Image Preview Ends -->
+
+          <!-- PDF To PNG Helper -->
+          <canvas class="hidden" id="hiddenCanvas"></canvas>
+
+          <!-- Download Certificate Button Starts -->
+          <button
+            data-tooltip-target="tooltip-animation-download"
+            type="button"
+            class="action-btn w-[90%] cursor-not-allowed disabled:opacity-50"
+            id="download"
+            disabled
+          >
+            Download Certificate
+          </button>
+          <div
+            id="tooltip-animation-download"
+            role="tooltip"
+            class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 transition-opacity delay-300 tooltip dark:bg-gray-700"
+          >
+            Download Certificate in PDF Format!
+            <div class="tooltip-arrow" data-popper-arrow></div>
+          </div>
+          <!-- Download Certificate Button Ends -->
+        </div>
+        <!-- Specimen Certificate/Preview Display Ends  -->
+      </div>
+      <!-- Preview Image Container Ends -->
+    </main>
+    <!-- Main Ends -->
+
+    <!-- Script Starts -->
+    <script type="module" src="./main.js"></script>
+
+    <!-- Pdf Lib JS -->
+    <script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
+    <script src="https://unpkg.com/@pdf-lib/fontkit@0.0.4"></script>
+
+    <!-- Pdf JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.2.228/pdf.min.js"></script>
+
+    <!-- FileSaver JS -->
+    <script type="module" src="./FileSaver.js"></script>
+
+    <!-- Flowbite -->
+    <script  type="module"  src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
+
+    <!-- SweetAlert -->
+    <!-- <script type="module"  src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> -->
+    <!-- Script Ends -->
+  </body>
+  <!-- Body Ends -->
+</html>
+
+<!-- Developed with love by Shibam Saha -->

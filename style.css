@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+  border: none;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+/* Number input tag arrow remove */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+@tailwind utilities;
+
+@layer components {
+  /* Custom Background Animation CSS Starts */
+  .bg {
+    @apply animate-slide bottom-0 -left-1/2 opacity-50 fixed -right-1/2 top-0 -z-10;
+    background-image: linear-gradient(-60deg, #6c3 50%, #09f 50%);
+    background-image: linear-gradient(-60deg, #96ff61 50%, #73c7ff 50%);
+  }
+  .bg2 {
+    animation-direction: alternate-reverse;
+    animation-duration: 4s;
+  }
+
+  .bg3 {
+    animation-duration: 5s;
+  }
+  /* Custom Background Animation CSS Ends */
+
+  .form-labels {
+    @apply block ml-0.5 mt-5 text-base sm:text-lg font-semibold text-black;
+  }
+
+  .form-inputs {
+    @apply mt-1 p-2.5 block w-full border-2 bg-yellow-50 border-amber-500 text-black font-semibold text-sm sm:text-base rounded-lg focus:outline-none focus:ring-1 focus:ring-blue-800 focus:border-blue-800 placeholder:font-normal placeholder:text-gray-900 caret-blue-800;
+  }
+  .action-btn {
+    @apply mt-6 mb-2 px-5 py-2.5 w-full block text-lg sm:text-xl font-bold tracking-wider rounded-lg text-center text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:outline-none focus:ring-1 focus:ring-blue-300 dark:focus:ring-blue-800;
+  }
+}
+
+/* Developed with love by Shibam Saha */
