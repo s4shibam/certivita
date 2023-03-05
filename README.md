@@ -59,7 +59,7 @@
 
 - Mobile View
 
-<img src="./media/Mobile2.png" width="75%" alt="Mobile View">
+<img src="./media/Mobile.png" width="75%" alt="Mobile View">
 
 <br/>
 
