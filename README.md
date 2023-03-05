@@ -43,23 +43,23 @@
 
 - Landing Page
 
-<img src="./media/Landing.png" height="50%" alt="Landing Page">
+<img src="./media/Landing.png" height="800px" alt="Landing Page">
 
 - Preview of Generated Certificate
 
-<img src="./media/Certificate.png" height="50%" alt="Preview of Generated Certificate">
+<img src="./media/Certificate.png" height="800px" alt="Preview of Generated Certificate">
 
 - Invalid Input
 
-<img src="./media/Invalid.png" height="50%" alt="Invalid Input">
+<img src="./media/Invalid.png" height="800px" alt="Invalid Input">
 
 - Downloaded Certificate (Example)
 
-<img src="./media/Invalid.png" height="50%" alt="Downloaded Certificate (Example)">
+<img src="./media/Invalid.png" height="800px" alt="Downloaded Certificate (Example)">
 
 - Mobile View
 
-<img src="./media/Mobile.png" height="50%" alt="Mobile View">
+<img src="./media/Mobile.png" height="1600px" alt="Mobile View">
 
 <br/>
 
