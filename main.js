@@ -144,12 +144,12 @@ async function getPreview(pdf_url) {
     alert(error.message);
   }
 
+  // Generate an url from canvas and assign that to the certificatePreview (img tag)
+  certificatePreview.src = await hiddenCanvas.toDataURL();
+
   // Remove loading animation
   loadingAnimation.classList.add('hidden');
   loadingAnimation.classList.remove('flex');
-
-  // Generate an url from canvas and assign that to the certificatePreview (img tag)
-  certificatePreview.src = await hiddenCanvas.toDataURL();
 }
 
 // Generate Certificate
