@@ -1,14 +1,15 @@
 // Import CSS File
-import "./style.css";
+import './style.css';
 
 // Import required files
-import certificateTemplate from "./public/Certificate_Template.pdf";
-import specimenCertificate from "./public/Specimen_Certificate.png";
+import certificateTemplate from './public/Certificate_Template.pdf';
+import specimenCertificate from './public/Specimen_Certificate.png';
 
 // Import required libraries
-const { PDFDocument, rgb } = PDFLib;
-import swal from "sweetalert";
-import saveAs from "./FileSaver.js";
+import { PDFDocument } from 'pdf-lib';
+import fontkit from '@pdf-lib/fontkit';
+import swal from 'sweetalert';
+import saveAs from './FileSaver.js';
 
 //All variable declaration
 
@@ -46,8 +47,8 @@ function formValidation() {
   if (genre.value.length < 5 || genre.value.length > 30) {
     swal(
       "Invalid 'Genre' Input!",
-      "Length: " + genre.value.length + ", not accepted! Range: 5-30 Letters",
-      "error"
+      'Length: ' + genre.value.length + ', not accepted! Range: 5-30 Letters',
+      'error'
     );
     return false;
   }
@@ -55,10 +56,10 @@ function formValidation() {
   if (recipient.value.length < 5 || recipient.value.length > 25) {
     swal(
       "Invalid 'Recipient' Input!",
-      "Length: " +
+      'Length: ' +
         recipient.value.length +
-        ", not accepted! Range: 5-25 Letters",
-      "error"
+        ', not accepted! Range: 5-25 Letters',
+      'error'
     );
     return false;
   }
@@ -66,8 +67,8 @@ function formValidation() {
   if (reason.value.length < 5 || reason.value.length > 150) {
     swal(
       "Invalid 'Reason' Input!",
-      "Length: " + reason.value.length + ", not accepted! Range: 5-150 Letters",
-      "error"
+      'Length: ' + reason.value.length + ', not accepted! Range: 5-150 Letters',
+      'error'
     );
     return false;
   }
@@ -81,15 +82,15 @@ function formValidation() {
     date.value.substring(2, 4) > 12 ||
     date.value.substring(4, 8) < 1
   ) {
-    swal("Invalid 'Date' Input!", "Follow the given format!", "error");
+    swal("Invalid 'Date' Input!", 'Follow the given format!', 'error');
     return false;
   }
 
   if (sign.value.length < 5 || sign.value.length > 30) {
     swal(
       "Invalid 'Signature' Input!",
-      "Length: " + sign.value.length + ", not accepted! Range: 5-20 Letters",
-      "error"
+      'Length: ' + sign.value.length + ', not accepted! Range: 5-20 Letters',
+      'error'
     );
     return false;
   }
@@ -103,7 +104,7 @@ function modifyCertificate(text, xVal, yVal, fontSize, fontName) {
     x: xVal,
     y: yVal,
     size: fontSize,
-    font: fontName,
+    font: fontName
   });
 }
 
@@ -132,8 +133,8 @@ async function getPreview(pdf_url) {
 
   // Set the render context
   renderContext = {
-    canvasContext: hiddenCanvas.getContext("2d"),
-    viewport: viewport,
+    canvasContext: hiddenCanvas.getContext('2d'),
+    viewport: viewport
   };
 
   // Render the page contents in the canvas
@@ -144,8 +145,8 @@ async function getPreview(pdf_url) {
   }
 
   // Remove loading animation
-  loadingAnimation.classList.add("hidden");
-  loadingAnimation.classList.remove("flex");
+  loadingAnimation.classList.add('hidden');
+  loadingAnimation.classList.remove('flex');
 
   // Generate an url from canvas and assign that to the certificatePreview (img tag)
   certificatePreview.src = await hiddenCanvas.toDataURL();
@@ -155,11 +156,11 @@ async function getPreview(pdf_url) {
 async function generateCertificate() {
   // Check data accuracy, validity to generate Certificate
   if (!formValidation()) {
-    console.log("Form Validation Failed!");
+    console.log('Form Validation Failed!');
 
     // Disable download Button
     downloadButton.disabled = true;
-    downloadButton.classList.add("cursor-not-allowed");
+    downloadButton.classList.add('cursor-not-allowed');
 
     // Show default preview certificate
     certificatePreview.src = specimenCertificate;
@@ -169,8 +170,8 @@ async function generateCertificate() {
 
   // On success ...
   // Show loading animation
-  loadingAnimation.classList.remove("hidden");
-  loadingAnimation.classList.add("flex");
+  loadingAnimation.classList.remove('hidden');
+  loadingAnimation.classList.add('flex');
 
   // Get the available PDFDocument and convert it into arrayBuffer
   existingPdfBytes = await fetch(certificateTemplate).then((res) =>
@@ -185,21 +186,21 @@ async function generateCertificate() {
 
   // Fetch custom fonts
   PFDFont = await pdfDoc.embedFont(
-    await fetch("/fonts/PlayfairDisplay-Bold.ttf").then((res) =>
+    await fetch('/fonts/PlayfairDisplay-Bold.ttf').then((res) =>
       res.arrayBuffer()
     )
   );
 
   PSBFont = await pdfDoc.embedFont(
-    await fetch("/fonts/Poppins-SemiBold.ttf").then((res) => res.arrayBuffer())
+    await fetch('/fonts/Poppins-SemiBold.ttf').then((res) => res.arrayBuffer())
   );
 
   PLFont = await pdfDoc.embedFont(
-    await fetch("/fonts/Poppins-Light.ttf").then((res) => res.arrayBuffer())
+    await fetch('/fonts/Poppins-Light.ttf').then((res) => res.arrayBuffer())
   );
 
   ABRFont = await pdfDoc.embedFont(
-    await fetch("/fonts/AlexBrush-Regular.ttf").then((res) => res.arrayBuffer())
+    await fetch('/fonts/AlexBrush-Regular.ttf').then((res) => res.arrayBuffer())
   );
 
   // Get the first page of the document
@@ -208,9 +209,9 @@ async function generateCertificate() {
   // Date formatting
   displayDate =
     date.value.substring(0, 2) +
-    " / " +
+    ' / ' +
     date.value.substring(2, 4) +
-    " / " +
+    ' / ' +
     date.value.substring(4, 8);
 
   // Modification Section
@@ -220,22 +221,22 @@ async function generateCertificate() {
   modifyCertificate(displayDate, 539, 110, 15, PLFont);
   modifyCertificate(sign.value, 160, 110, 35, ABRFont);
 
-  // Enable download Button
-  downloadButton.disabled = false;
-  downloadButton.classList.remove("cursor-not-allowed");
-
   // Uint8Array formation from modified pdf
   pdfBytes = await pdfDoc.save();
-  console.log("Your Certificate has been created successfully!");
+  console.log('Your Certificate has been created successfully!');
 
   certificateName = recipient.value + "'s Certificate.pdf";
   // Create a new File object instance.
   pdfFile = new File([pdfBytes], certificateName, {
-    type: "application/pdf;charset=utf-8",
+    type: 'application/pdf;charset=utf-8'
   });
 
   // Preview certificate
   getPreview(URL.createObjectURL(pdfFile));
+
+  // Enable download Button
+  downloadButton.disabled = false;
+  downloadButton.classList.remove('cursor-not-allowed');
 }
 
 // Download certificate (PDF Format)
@@ -249,30 +250,30 @@ function backToHome() {
 }
 
 // Program starts here - After page is fully loaded
-window.addEventListener("load", () => {
-  logoButton = document.getElementById("logo");
-  generateButton = document.getElementById("generate");
-  genre = document.getElementById("genre");
-  recipient = document.getElementById("recipient");
-  reason = document.getElementById("reason");
-  date = document.getElementById("date");
-  sign = document.getElementById("sign");
-  loadingAnimation = document.getElementById("loading-animation");
-  hiddenCanvas = document.getElementById("hiddenCanvas");
-  certificatePreview = document.getElementById("preview");
-  downloadButton = document.getElementById("download");
+window.addEventListener('load', () => {
+  logoButton = document.getElementById('logo');
+  generateButton = document.getElementById('generate');
+  genre = document.getElementById('genre');
+  recipient = document.getElementById('recipient');
+  reason = document.getElementById('reason');
+  date = document.getElementById('date');
+  sign = document.getElementById('sign');
+  loadingAnimation = document.getElementById('loading-animation');
+  hiddenCanvas = document.getElementById('hiddenCanvas');
+  certificatePreview = document.getElementById('preview');
+  downloadButton = document.getElementById('download');
 
   if (generateButton) {
-    generateButton.addEventListener("click", generateCertificate);
+    generateButton.addEventListener('click', generateCertificate);
   }
 
   if (downloadButton) {
-    downloadButton.addEventListener("click", downloadCertificate);
+    downloadButton.addEventListener('click', downloadCertificate);
   }
 
   // Takes to home page
   if (logoButton) {
-    logoButton.addEventListener("click", backToHome);
+    logoButton.addEventListener('click', backToHome);
   }
 });
 
