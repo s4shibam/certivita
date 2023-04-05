@@ -57,7 +57,7 @@
 
 - Downloaded Certificate (Example)
 
-<img src="./media/Invalid.png" width="75%" alt="Downloaded Certificate (Example)">
+<img src="./media/Output.png" width="75%" alt="Downloaded Certificate (Example)">
 
 - Mobile View
 
