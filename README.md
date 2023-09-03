@@ -16,7 +16,7 @@
 
 **Live Link**
 
-- [Certivita - Certificate Generator](https://s4shibam-certivita.netlify.app)
+- [Certivita - Certificate Generator](https://certivita.shibamsaha.dev)
 
 <br/>
 
@@ -43,11 +43,14 @@
 
 **Reference Images / Screenshots**
 
+<img src="./media/Demo.gif" width="720px" alt="Demo Video">
+
+<!-- 
 - Landing Page
 
 <img src="./media/Landing.png" width="75%" alt="Landing Page">
 
-- Preview of Generated Certificate
+ - Preview of Generated Certificate
 
 <img src="./media/Certificate.png" width="75%" alt="Preview of Generated Certificate">
 
@@ -61,7 +64,7 @@
 
 - Mobile View
 
-<img src="./media/Mobile.png" width="75%" alt="Mobile View">
+<img src="./media/Mobile.png" width="75%" alt="Mobile View"> -->
 
 <br/>
 
