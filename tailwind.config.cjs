@@ -19,7 +19,6 @@ module.exports = {
 
       animation: {
         slide: "slide 3s ease-in-out infinite alternate",
-        "spin-slow": "spin 3s linear infinite",
       },
     },
   },
