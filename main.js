@@ -6,8 +6,8 @@ import certificateTemplate from './public/Certificate_Template.pdf';
 import specimenCertificate from './public/Specimen_Certificate.png';
 
 // Import required libraries
-import { PDFDocument } from 'pdf-lib';
 import fontkit from '@pdf-lib/fontkit';
+import { PDFDocument } from 'pdf-lib';
 import swal from 'sweetalert';
 import saveAs from './FileSaver.js';
 
@@ -156,9 +156,7 @@ async function getPreview(pdf_url) {
 async function generateCertificate() {
   // Check data accuracy, validity to generate Certificate
   if (!formValidation()) {
-    console.log('Form Validation Failed!');
-
-    // Disable download Button
+      // Disable download Button
     downloadButton.disabled = true;
     downloadButton.classList.add('cursor-not-allowed');
 
@@ -215,15 +213,14 @@ async function generateCertificate() {
     date.value.substring(4, 8);
 
   // Modification Section
-  modifyCertificate(genre.value, 75, 425, 45, PFDFont);
-  modifyCertificate(recipient.value, 76, 260, 35, PSBFont);
-  modifyCertificate(reason.value, 78, 228, 14, PLFont);
-  modifyCertificate(displayDate, 539, 110, 15, PLFont);
-  modifyCertificate(sign.value, 160, 110, 35, ABRFont);
+  modifyCertificate(genre.value, 73, 425, 45, PFDFont);
+  modifyCertificate(recipient.value, 73, 260, 35, PSBFont);
+  modifyCertificate(reason.value, 75, 228, 14, PLFont);
+  modifyCertificate(sign.value, 75, 115, 35, ABRFont);
+  modifyCertificate(displayDate, 560, 115, 15, PLFont);
 
   // Uint8Array formation from modified pdf
   pdfBytes = await pdfDoc.save();
-  console.log('Your Certificate has been created successfully!');
 
   certificateName = recipient.value + "'s Certificate.pdf";
   // Create a new File object instance.
