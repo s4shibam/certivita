@@ -73,6 +73,15 @@ function formValidation() {
     return false;
   }
 
+  if (sign.value.length < 5 || sign.value.length > 30) {
+    swal(
+      "Invalid 'Signature' Input!",
+      'Length: ' + sign.value.length + ', not accepted! Range: 5-20 Letters',
+      'error'
+    );
+    return false;
+  }
+
   if (
     date.value.length !== 8 ||
     date.value <= 0 ||
@@ -83,15 +92,6 @@ function formValidation() {
     date.value.substring(4, 8) < 1
   ) {
     swal("Invalid 'Date' Input!", 'Follow the given format!', 'error');
-    return false;
-  }
-
-  if (sign.value.length < 5 || sign.value.length > 30) {
-    swal(
-      "Invalid 'Signature' Input!",
-      'Length: ' + sign.value.length + ', not accepted! Range: 5-20 Letters',
-      'error'
-    );
     return false;
   }
 
@@ -156,7 +156,7 @@ async function getPreview(pdf_url) {
 async function generateCertificate() {
   // Check data accuracy, validity to generate Certificate
   if (!formValidation()) {
-      // Disable download Button
+    // Disable download Button
     downloadButton.disabled = true;
     downloadButton.classList.add('cursor-not-allowed');
 
