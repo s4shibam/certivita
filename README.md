@@ -1,74 +1,69 @@
-## Certivita - Certificate Generator
+<p align="center">
+    <a href="https://certivita.shibamsaha.dev">
+        <img alt="Certivita" width="100" src="./public/logo.png" style="border-radius: 10px">
+    </a>
+</p>
 
-**Details**
+<div align="center">
+    <h1>Certivita</h1>
+    <p>Certificate Generator</p>
+</div>
 
-- This is a Certificate Generator Web Application.
-- It takes various input as parameters to make a personalized downloadable certificate in pdf format.
-  - Certificate Genre
-  - Recipient Name
-  - Certificate Reason
-  - Date of Issue
-  - Signature
-- "PDF-LIB JS" is used to modify the certificate where as "PDF JS" is used to show the preview of the certificate.
-- User can download the certificate in PDF format (FileSaver JS used).
+<p align="center">
+    <img src="https://img.shields.io/github/languages/code-size/s4shibam/certivita?style=flat-square" alt="Code Size">
+    <img src="https://img.shields.io/github/license/s4shibam/certivita?style=flat-square" alt="License">
+    <img src="https://img.shields.io/github/stars/s4shibam/certivita?style=flat-square&logo=github" alt="Stars">
+</p>
 
-<br/>
 
-**Live Link**
+<br />
 
-- [Certivita - Certificate Generator](https://certivita.shibamsaha.dev)
 
-<br/>
+## ⚡ Introduction
 
-**Tech Stack**
+Certivita is an online tool that helps to generate fully customizable personalized certificates.
 
-[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=HTML5&logoColor=white)](#)
-[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=CSS3&logoColor=white)](#)
-[![JS](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=black)](#)
+## ✨ Features
+  
+-  Generate customizable certificates
+-  List of customizable fields:
+   -   Certificate Genre
+   -   Recipient Name
+   -   Certificate Reason
+   -   Date of Issue
+   -   Signature
+-  Download certificate in `.pdf` format
 
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=black)](#)
-[![Vite JS](https://img.shields.io/badge/Vite.js-646CFF?style=for-the-badge&logo=Vite&logoColor=white)](#)
 
-<br/>
+## ⚙️ Tech Stack
+  
+- HTML
+- Tailwind CSS
+- JavaScript
+- Vite JS
 
-**Additional Libraries**
 
+## 📦 Other Libraries and Tools
+  
 - PDF LIB JS
 - PDF JS
 - FileSaver JS
 - SweetAlert
 - Flowbite JS
 
-<br/>
+## 🎯 Goals
 
-**Reference Images / Screenshots**
+- [x] To build an application related to JavaScript `Canvas`
+- [x] To gain knowledge regarding file conversion and `pdf` file editing
 
-<img src="./media/Demo.gif" width="720px" alt="Demo Video">
+## 🖼️ Screenshots
 
-<!-- 
-- Landing Page
+![Landing Page](./readme_assets/screenshot_1.png)
+![Certificate](./readme_assets/screenshot_2.png)
 
-<img src="./media/Landing.png" width="75%" alt="Landing Page">
 
- - Preview of Generated Certificate
-
-<img src="./media/Certificate.png" width="75%" alt="Preview of Generated Certificate">
-
-- Invalid Input
-
-<img src="./media/Invalid.png" width="75%" alt="Invalid Input">
-
-- Downloaded Certificate (Example)
-
-<img src="./media/Output.png" width="75%" alt="Downloaded Certificate (Example)">
-
-- Mobile View
-
-<img src="./media/Mobile.png" width="75%" alt="Mobile View"> -->
-
-<br/>
-
-**Follow Me**
+## 👋🏻 Contact
 
 [![Linkedin](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/s4shibam)
-[![Facebook](https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white)](https://facebook.com/s4shibam)
+[![Twitter](https://img.shields.io/badge/Twitter-00ACEE?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/intent/follow?screen_name=s4shibam)
+
